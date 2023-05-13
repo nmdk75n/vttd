@@ -55,9 +55,9 @@
             t = Math.floor(Math.random()*3);
             // d - dt
             if (t == 0) {
-                p = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2))];
-                n = [(Math.round(Math.random()) * 2 - 1)*p[0]+Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*p[1]+Math.floor(Math.random()*(m/2))];
-                a = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m))];
+                p = [Math.floor(Math.random()*(m/2)),Math.floor(Math.random()*(m/2))];
+                n = [p[0]+Math.floor(Math.random()*(m/2)),p[1]+Math.floor(Math.random()*(m/2))];
+                a = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
                 pr = ddtf[Math.floor(Math.random()*ddtf.length)];
                 xy = -n[0]*a[0]-n[1]*a[1]
                 s = ""
@@ -75,10 +75,10 @@ MathJax.typeset();
 
             // dt - dt
             } else if (t == 1) {
-                a1 = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2))];
-                n1 = [(Math.round(Math.random()) * 2 - 1)*a1[0]+Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*a1[1]+Math.floor(Math.random()*(m/2))];
-                a2 = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m))];
-                n2 = [(Math.round(Math.random()) * 2 - 1)*a2[0]+Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*a2[1]+Math.floor(Math.random()*(m/2))];
+                a1 = [Math.floor(Math.random()*(m/2)),Math.floor(Math.random()*(m/2))];
+                n1 = [a1[0]+Math.floor(Math.random()*(m/2)),a1[1]+Math.floor(Math.random()*(m/2))];
+                a2 = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
+                n2 = [a2[0]+Math.floor(Math.random()*(m/2)),a2[1]+Math.floor(Math.random()*(m/2))];
                 pr = dtdtf[Math.floor(Math.random()*dtdtf.length)];
                 l1 = [n1[0], n1[1], -n1[0]*a1[0]-n1[1]*a1[1]]
                 l2 = [n2[0], n2[1], -n2[0]*a2[0]-n2[1]*a2[1]]
@@ -119,9 +119,9 @@ Vậy hai đường ray cắt nhau
  // dt - dtr
             } else {
                 rad = Math.max(1, Math.floor(Math.random()*(m/4)))
-                p = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2))];
-                n = [(Math.round(Math.random()) * 2 - 1)*p[0]+Math.floor(Math.random()*(m/2)),(Math.round(Math.random()) * 2 - 1)*p[1]+Math.floor(Math.random()*(m/2))];
-                a = [(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m)),(Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m))];
+                p = [Math.floor(Math.random()*(m/2)),Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2))];
+                n = [p[0]+Math.floor(Math.random()*(m/2)),p[1]+Math.floor(Math.random()*(m/2))];
+                a = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
                 pr = dtrdtf[Math.floor(Math.random()*ddtf.length)];
                 xy = -n[0]*a[0]-n[1]*a[1]
                 s = ""
