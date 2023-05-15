@@ -42,6 +42,11 @@
         dtrdtf = [
             ["tham gia một cuộc thi ném bóng. Người chơi phải đứng theo một hàng ngang và ném vào vòng tròn, ai gần nhất có điểm cao nhất. Cho phương trình tổng quát của hàng người là","phương trình đường tròn của vòng tròn là",". Hãy tính khoảng cách đứng của người chơi gần nhất. Họ có đứng phạm quy không? (phạm quy là khi đứng trong vòng tròn)"]
         ]
+        //r()*
+        function r() {
+            c = Math.random()
+            return c<0.5 ? -1 : 1;
+        }
         function q() {
             document.getElementById("atext").innerHTML = "";
             m = Math.max(20, document.getElementById("mi").value);
@@ -55,9 +60,9 @@
             t = Math.floor(Math.random()*3);
             // d - dt
             if (t == 0) {
-                p = [Math.floor(Math.random()*(m/2)),Math.floor(Math.random()*(m/2))];
-                n = [p[0]+Math.floor(Math.random()*(m/2)),p[1]+Math.floor(Math.random()*(m/2))];
-                a = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
+                p = [r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                n = [p[0]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),p[1]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                a = [r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1)];
                 pr = ddtf[Math.floor(Math.random()*ddtf.length)];
                 xy = -n[0]*a[0]-n[1]*a[1]
                 s = ""
@@ -75,10 +80,10 @@ MathJax.typeset();
 
             // dt - dt
             } else if (t == 1) {
-                a1 = [Math.floor(Math.random()*(m/2)),Math.floor(Math.random()*(m/2))];
-                n1 = [a1[0]+Math.floor(Math.random()*(m/2)),a1[1]+Math.floor(Math.random()*(m/2))];
-                a2 = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
-                n2 = [a2[0]+Math.floor(Math.random()*(m/2)),a2[1]+Math.floor(Math.random()*(m/2))];
+                a1 = [r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                n1 = [a1[0]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),a1[1]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                a2 = [r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1)];
+                n2 = [a2[0]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),a2[1]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
                 pr = dtdtf[Math.floor(Math.random()*dtdtf.length)];
                 l1 = [n1[0], n1[1], -n1[0]*a1[0]-n1[1]*a1[1]]
                 l2 = [n2[0], n2[1], -n2[0]*a2[0]-n2[1]*a2[1]]
@@ -119,9 +124,9 @@ Vậy hai đường ray cắt nhau
  // dt - dtr
             } else {
                 rad = Math.max(1, Math.floor(Math.random()*(m/4)))
-                p = [Math.floor(Math.random()*(m/2)),Math.round(Math.random()) * 2 - 1)*Math.floor(Math.random()*(m/2))];
-                n = [p[0]+Math.floor(Math.random()*(m/2)),p[1]+Math.floor(Math.random()*(m/2))];
-                a = [Math.floor(Math.random()*(m)),Math.floor(Math.random()*(m))];
+                p = [r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                n = [p[0]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1),p[1]+r()*Math.floor(Math.random()*(m/2))+r()*Math.floor(Math.random()*10+1)];
+                a = [r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1),r()*Math.floor(Math.random()*(m))+r()*Math.floor(Math.random()*10+1)];
                 pr = dtrdtf[Math.floor(Math.random()*ddtf.length)];
                 xy = -n[0]*a[0]-n[1]*a[1]
                 s = ""
